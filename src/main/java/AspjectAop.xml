@@ -19,8 +19,8 @@
          <aop:config>
          <aop:pointcut expression="execution(* com.wangzhp.JustRun.SpringAOP.Xml.Tagert.*(..))" id="pCut"/>
          <aop:aspect ref="testAspect" order="2">
-          <aop:before method="BeforeMethod"  pointcut-ref="pCut" />
-          <aop:after method="BeforeMethod"  pointcut-ref="pCut" />
+          <aop:before method="BeforeMethod"  pointcut-ref="pCut"    />
+          <aop:after method="BeforeMethod"  pointcut-ref="pCut"  />
           <aop:after-returning method="BeforeMethod" pointcut-ref="pCut"/>
          </aop:aspect>
          </aop:config>
