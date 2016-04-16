@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.5.xsd">
+	    <bean id="student11"  abstract="true" p:name="#{T(java.lang.Math).PI}" >
+	   </bean>
+		<bean id="student22" parent="student11" class="com.wangzhp.demo.Student"  >
+	   </bean>
+		<bean id="demo" class="com.wangzhp.demo.person"  p:student-ref="student22"  >
+		<!-- <property name="student"  ref="Stu"  >  </property> autowire="byType"-->
+	</bean>
+</beans>
