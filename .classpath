@@ -32,5 +32,7 @@
 	<classpathentry kind="lib" path="src/main/resources/lib/com.springsource.org.aopalliance-1.0.0.jar"/>
 	<classpathentry kind="lib" path="src/main/resources/lib/com.springsource.org.aspectj.weaver-1.6.8.RELEASE.jar"/>
 	<classpathentry kind="lib" path="src/main/resources/lib/spring-aspects-4.0.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="src/main/resources/lib/c3p0-0.9.1.2.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

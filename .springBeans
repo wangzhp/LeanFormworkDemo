@@ -10,6 +10,7 @@
 		<config>src/test/java/factory.xml</config>
 		<config>src/test/java/Annotation.xml</config>
 		<config>src/main/java/AspjectAop.xml</config>
+		<config>src/main/java/JDBC.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
