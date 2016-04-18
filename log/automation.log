@@ -1,0 +1,13 @@
+2016-04-18 18:02:11,099 [main] INFO  Version:37 - HHH000412: Hibernate Core {5.1.0.Final}
+2016-04-18 18:02:11,142 [main] INFO  Environment:213 - HHH000206: hibernate.properties not found
+2016-04-18 18:02:11,144 [main] INFO  Environment:317 - HHH000021: Bytecode provider name : javassist
+2016-04-18 18:02:11,191 [main] WARN  deprecation:91 - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2016-04-18 18:02:11,471 [main] INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-04-18 18:02:11,492 [main] WARN  deprecation:75 - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2016-04-18 18:02:12,895 [main] WARN  connections:71 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-04-18 18:02:12,907 [main] INFO  connections:127 - HHH10001005: using driver [org.gjt.mm.mysql.Driver] at URL [jdbc:mysql://localhost:3306/test]
+2016-04-18 18:02:12,908 [main] INFO  connections:136 - HHH10001001: Connection properties: {user=root, password=****}
+2016-04-18 18:02:12,908 [main] INFO  connections:141 - HHH10001003: Autocommit mode: false
+2016-04-18 18:02:12,914 [main] INFO  DriverManagerConnectionProviderImpl:39 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-04-18 18:02:13,896 [main] INFO  Dialect:156 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-04-18 18:02:14,887 [main] INFO  connections:235 - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/test]
