@@ -3,8 +3,10 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 
    <!--   <context:component-scan base-package="com.wangzhp.JustRun.SpringAOP.Xml" ></context:component-scan>-->   
@@ -14,9 +16,10 @@
           <bean id="target" class="com.wangzhp.JustRun.SpringAOP.Xml.Tagert"></bean>
           
             <bean id="testAspect" class="com.wangzhp.JustRun.SpringAOP.Xml.TestAspect"></bean>
-
+        
          <!-- aop配置 -->
          <aop:config>
+    
          <aop:pointcut expression="execution(* com.wangzhp.JustRun.SpringAOP.Xml.Tagert.*(..))" id="pCut"/>
          <aop:aspect ref="testAspect" order="2">
           <aop:before method="BeforeMethod"  pointcut-ref="pCut"    />
