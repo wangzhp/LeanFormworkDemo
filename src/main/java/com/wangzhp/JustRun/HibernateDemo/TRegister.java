@@ -1,4 +1,6 @@
+
 package com.wangzhp.JustRun.HibernateDemo;
+
 
 
 public class TRegister  {
