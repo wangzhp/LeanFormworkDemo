@@ -1,13 +1,20 @@
 package com.wangzhp.JustRun.HibernateDemo;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
+@SuppressWarnings("unchecked")
 public class testHibernate {
 
 	
@@ -34,12 +41,68 @@ public class testHibernate {
 			factory.close();
 			 System.out.println("Ö´ÐÐÍê±Ï------------------------------------");
 	 }
-	
-	
-	@Test
-	public void test() {
+	  
+	  @Test
+		public void testMapping() {
+		  Parent p=new Parent();
+		  Child c=new Child();
+		 // c.setUuid("11");
+		   c.setAddress("Addressads");
+		   c.setPostCode("postCode2");
+		   c.setUuid("uuid22");
+		   c.setParent(p);
+		   p.setName("wangzhp");
+          //  p.setId("22");
+		   p.getChildren().add(c);
+		   System.out.println(p);
+		  session.save(p);
+		  System.out.println(p);
+		   
+	  }
+	  @Test
+	public void testSqlQuery() {
+		  
+		  List<TRegister> list=  session.createSQLQuery("select * from T_Register where userName=?")
+				 
+				  .addEntity(TRegister.class)
+				.setString(0, "wangzh11")
+				 .list();
+				 // .setParameter("userName", "wangzh122221").list();
+				 
+		  for(TRegister t :list){
+				 System.out.println(t.getUserName());
+			}	
+	  }
+	  
+	  @Test
+		public void testCirtist() {
 
-	
+		List<TRegister> list= session.createCriteria(TRegister.class)
+		      .add(Restrictions.eq("userName", "wangzh122221"))
+		      .addOrder(Order.asc("userName"))
+		      .setFirstResult(1)
+		      .setMaxResults(5)
+		      .list();
+		     
+		for(TRegister t :list){
+			 System.out.println(t.getUserName());
+		}	
+		
+	  }
+	  
+	  @Test
+		public void testDelete() {
+		  
+			TRegister rg = new TRegister();
+			rg.setId(1);
+			session.delete(rg);
+		  
+	  }
+
+	@Test
+	public void testSave() {
+
+	 
 		TRegister rg = new TRegister();
 
 		rg.setAge(22);
@@ -62,7 +125,12 @@ public class testHibernate {
 		TRegister t= (TRegister)session.load(TRegister.class, 1);
 		  System.out.println(t.getClass().getName());
 		     
-	 System.out.println(t);
+		  
+		SQLQuery query=  session.createSQLQuery("select userName from t_register");
+
+		List list=  query.list();
+        t.setUserName("Áú¾í·ç");
+		System.out.println(list);
 		
 	}
 
